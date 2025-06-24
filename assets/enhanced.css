@@ -2,182 +2,187 @@
 
 /* Overall layout */
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #1e293b;
-  color: #f1f5f9;
-  line-height: 1.6;
-  display: flex;
-  flex-direction: row;
-  gap: 2em;
-  padding: 2em;
-}
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1e293b;
+    color: #f1f5f9;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    padding: 2em;
+  }
+  
+  aside {
+    flex: 0 0 300px;
+  }
+  
+  main {
+    flex: 1;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+  }
+  
+  /* Sidebar updates */
+  .sidebar-card {
+    padding: 1.5em;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    background-color: #334155;
+    text-align: center;
+  }
+  
+  .sidebar-card img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1em;
+  }
+  
+  .info-block, .socials {
+    margin-bottom: 1em;
+  }
+  
+  .info-block strong i {
+    margin-right: 0.5em;
+  }
+  
+  .info-block strong {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4em;
+  }
+  
+  .socials a {
+    margin: 0 0.5em;
+    text-decoration: none;
+    color: #f1f5f9;
+    font-size: 1.4em;
+  }
+  
+  .socials a:hover {
+    color: #38bdf8;
+  }
+  
+  /* Card layout and improvements */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 2em;
+  }
+  
+  .card {
+    padding: 1.5em;
+    border-radius: 12px;
+    background-color: #334155;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 0.5em;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.5);
+  }
+  
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    padding: 0.6em 1.2em;
+    margin: 0.5em 0.5em 0 0;
+    border-radius: 8px;
+    text-decoration: none;
+    background-color: #38bdf8;
+    color: #1e293b;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  
+  .btn:hover {
+    background-color: #0ea5e9;
+    transform: translateY(-2px);
+  }
+  
+  /* Typography and nav */
+  h1, h2, h3 {
+    font-weight: 600;
+    margin-top: 0.25em;
+    margin-bottom: 0.5em;
+  }
+  
+  nav {
+    margin-bottom: 1em;
+    border-bottom: 2px solid #475569;
+    padding-bottom: 0.5em;
+  }
+  
+  nav a {
+    margin-right: 1em;
+    text-decoration: none;
+    font-weight: bold;
+    color: #f1f5f9;
+    position: relative;
+    padding-bottom: 0.25em;
+  }
+  
+  nav a:hover::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: #38bdf8;
+  }
+  
+  /* About page enhancements */
+  .card.about {
+    background: linear-gradient(135deg, #334155, #3b475c);
+    font-size: 1.1em;
+    line-height: 1.8;
+    padding: 2em;
+    color: #e2e8f0;
+    margin-bottom: 0em;
+  }
+  
+  .card.about::before {
+    content: "";
+    display: none;
+  }
 
-aside {
-  flex: 0 0 300px;
-}
-
-main {
-  flex: 1;
-  padding: 2em;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5em;
-}
-
-/* Sidebar updates */
-.sidebar-card {
-  padding: 1.5em;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  background-color: #334155;
-  text-align: center;
-}
-
-.sidebar-card img {
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  margin-bottom: 1em;
-}
-
-.info-block, .socials {
-  margin-bottom: 1em;
-}
-
-.info-block strong i {
-  margin-right: 0.5em;
-}
-
-.info-block strong {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4em;
-}
-
-.socials a {
-  margin: 0 0.5em;
-  text-decoration: none;
-  color: #f1f5f9;
-  font-size: 1.4em;
-}
-
-.socials a:hover {
-  color: #38bdf8;
-}
-
-/* Card layout and improvements */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-  gap: 2em;
-}
-
-.card {
-  padding: 1.5em;
-  border-radius: 12px;
-  background-color: #334155;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 0.75em;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.5);
-}
-
-/* Buttons */
-.btn {
-  display: inline-block;
-  padding: 0.6em 1.2em;
-  margin: 0.5em 0.5em 0 0;
-  border-radius: 8px;
-  text-decoration: none;
-  background-color: #38bdf8;
-  color: #1e293b;
-  font-weight: bold;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.btn:hover {
-  background-color: #0ea5e9;
-  transform: translateY(-2px);
-}
-
-/* Typography and nav */
-h1, h2, h3 {
-  font-weight: 600;
-  margin-top: 0.25em;
-  margin-bottom: 0.5em;
-}
-
-nav {
-  margin-bottom: 1em;
-  border-bottom: 2px solid #475569;
-  padding-bottom: 0.5em;
-}
-
-nav a {
-  margin-right: 1em;
-  text-decoration: none;
-  font-weight: bold;
-  color: #f1f5f9;
-  position: relative;
-  padding-bottom: 0.25em;
-}
-
-nav a:hover::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  left: 0;
-  bottom: 0;
-  background-color: #38bdf8;
-}
-
-/* About page enhancements */
-.card.about {
-  background: linear-gradient(135deg, #334155, #3b475c);
-  font-size: 1.1em;
-  line-height: 1.8;
-  padding: 2em;
-  color: #e2e8f0;
-  margin-bottom: 2em;
-}
-
-.card.about::before {
-  content: "";
-  display: none;
-}
-
-/* Skill bars */
-.skill-bar {
-  margin: 0.5em 0 1em;
-}
-
-.skill-label {
-  font-weight: 600;
-  margin-bottom: 0.25em;
-}
-
-.skill-bar-bg {
-  background: #1e293b;
-  border-radius: 10px;
-  overflow: hidden;
-  height: 12px;
-}
-
-.skill-bar-fill {
-  height: 100%;
-  background: #facc15;
-  width: 0;
-  border-radius: 10px;
-  transition: width 1s ease-in-out;
-}
-
-.skill-bar-fill.loaded {
-  width: var(--skill-level);
-}
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    width: 100%;
+    padding: 0.9em 1em;
+    border: none;
+    border-radius: 8px;
+    background-color: #1e293b;
+    color: #f1f5f9;
+    font-size: 1em;
+    box-sizing: border-box;
+  }
+  
+  .contact-form label {
+    font-weight: 600;
+    margin-top: 1em;
+  }
+  
+  .contact-form button {
+    background-color: #38bdf8;
+    color: #1e293b;
+    font-weight: bold;
+    margin-top: 1.25em;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  
+  .contact-form button:hover {
+    background-color: #0ea5e9;
+    transform: translateY(-1px);
+  }
+  
+  
+  
