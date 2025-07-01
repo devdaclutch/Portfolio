@@ -1,4 +1,4 @@
-/* Enhancements for visual flair, icons, and layout */
+/* Enhancements for visual flair, icons, layout, and interactivity */
 
 /* Overall layout */
 body {
@@ -83,16 +83,24 @@ main {
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   margin-bottom: 0.75em;
   position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.card[data-aos] {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.6s ease-out;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(255, 200, 0, 0.507);
+  box-shadow: 0 12px 24px rgba(255, 217, 0, 0.5);
   background: linear-gradient(135deg, #3b475c, #44546b);
 }
 
-.card:not(.contact-card)::before {
-  content: "\f0f2"; /* example icon */
+.card::before {
+  content: "\f0f2";
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
   color: rgba(255, 255, 255, 0.03);
@@ -102,7 +110,6 @@ main {
   right: 20px;
   animation: floatIcon 4s ease-in-out infinite;
 }
-
 .contact-card form {
   display: flex;
   flex-direction: column;
@@ -124,8 +131,6 @@ main {
   outline: 2px solid #38bdf8;
   background-color: #1e293b;
 }
-
-
 
 @keyframes floatIcon {
   0%, 100% {
@@ -153,6 +158,11 @@ main {
 .btn:hover {
   background-color: #0ea5e9;
   transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: scale(0.96);
+  background-color: #0284c7;
 }
 
 /* Typography and nav */
@@ -219,25 +229,11 @@ nav a:hover::after {
     "languages hardware spoken";
 }
 
-.skills-grid > .languages {
-  grid-area: languages;
-}
-
-.skills-grid > .tools {
-  grid-area: tools;
-}
-
-.skills-grid > .softskills {
-  grid-area: softskills;
-}
-
-.skills-grid > .spoken {
-  grid-area: spoken;
-}
-
-.skills-grid > .hardware {
-  grid-area: hardware;
-}
+.skills-grid > .languages { grid-area: languages; }
+.skills-grid > .tools { grid-area: tools; }
+.skills-grid > .softskills { grid-area: softskills; }
+.skills-grid > .spoken { grid-area: spoken; }
+.skills-grid > .hardware { grid-area: hardware; }
 
 .skills-grid h4 {
   margin-bottom: 0.5em;
@@ -284,4 +280,17 @@ nav a:hover::after {
 
 .skill-bar-fill.loaded {
   width: var(--skill-level);
+}
+
+/* AOS animation reset */
+[data-aos] {
+  opacity: 0;
+  transition-property: transform, opacity;
+  transition-duration: 0.6s;
+  transition-timing-function: ease-out;
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+  transform: none;
 }

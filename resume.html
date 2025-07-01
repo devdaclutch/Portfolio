@@ -3,6 +3,10 @@
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="assets/enhanced.css">
+<!-- AOS Library -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -10,6 +14,14 @@
 
 </head>
 <body>
+<script>
+  AOS.init({
+    once: true,
+    duration: 700,
+    easing: 'ease-out',
+  });
+</script>
+  
 <aside>
   <div class="sidebar-card">
     <img src="assets/avatar.png" alt="Profile" />
@@ -39,7 +51,7 @@
   </nav>
 
   <h1>My Resume</h1>
-  <div class="card">
+  <div class="card" data-aos="fade-up">
     <iframe src="assets/resume.pdf" width="100%" height="1000px" style="border:none;"></iframe>
     <br/>
     <a href="assets/resume.pdf" download class="btn"><i class="fas fa-download"></i> Download Resume</a>

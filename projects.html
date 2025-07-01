@@ -4,12 +4,21 @@
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="assets/enhanced.css">
+<!-- AOS Library -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
   <meta charset="UTF-8">
   <title>Dev Chodavadiya Portfolio</title>
 </head>
 <body>
-
+<script>
+  AOS.init({
+    once: true,
+    duration: 700,
+    easing: 'ease-out',
+  });
+</script>
 
 <aside>
   <div class="sidebar-card">
@@ -45,7 +54,7 @@
 
   <h1>Projects</h1>
   <div class="projects-grid">
-  <div class="card">
+  <div class="card" data-aos="fade-up">
     <h2>F1 Driver Comparison Tool</h2>
   <p>
     A Streamlit-based application that lets you compare fastest laps between two F1 drivers using real telemetry data.
@@ -58,7 +67,7 @@
   </div>
 </div>
 
-<div class="card">
+<div class="card" data-aos="fade-up" data-aos-delay="100">
   <h2>CSE150: Introduction to Computer Networks</h2>
   <p>
     Hands-on coursework covering Internet fundamentals and core protocols like TCP/IP, HTTP, and DNS. Explored routing, switching, packet analysis, and network security through labs with real hardware and Linux-based systems. Projects include network configuration, traffic troubleshooting, and protocol deep dives.

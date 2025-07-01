@@ -8,9 +8,20 @@
   <title>Dev Chodavadiya Portfolio</title>
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- AOS Library -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
 </head>
 <body>
-
+  <script>
+    AOS.init({
+      once: true,
+      duration: 700,
+      easing: 'ease-out',
+    });
+  </script>
+  
 <aside>
   <div class="sidebar-card">
     <img src="assets/avatar.png" alt="Profile" />
@@ -41,7 +52,7 @@
   </nav>
 
   <h1>About Me</h1>
-  <div class="card about">
+  <div class="card about" data-aos="fade-up">
     <p>
       I'm a computer engineering student at UC Santa Cruz with a passion for building data-driven tools and learning from motorsport telemetry. 
       Originally from India and raised in Los Angeles, California, I'm currently majoring in Computer Engineering with a minor in Computer Science and 
@@ -51,7 +62,7 @@
   </div>
 </div>
 
-  <div class="card about">
+  <div class="card about" data-aos="fade-up" data-aos-delay="100">
     <h3>Quick Facts</h3>
     <ul>
       <li>🎮 Obsessed with F1 telemetry, sim racing, and video games</li>
@@ -62,7 +73,7 @@
   </div>
 
   
-  <div class="card about">
+  <div class="card about" data-aos="fade-up" data-aos-delay="200">
     <h3>Skills</h3>
     <div class="skills-grid">
       <div>

@@ -4,12 +4,23 @@
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="assets/enhanced.css">
+<!-- AOS Library -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
 
   <meta charset="UTF-8">
   <title>Dev Chodavadiya Portfolio</title>
 </head>
 <body>
-
+  <script>
+    AOS.init({
+      once: true,
+      duration: 700,
+      easing: 'ease-out',
+    });
+  </script>
+  
 
 <aside>
   <div class="sidebar-card">
@@ -44,7 +55,7 @@
 </nav>
 
   <h1>Contact</h1>
-  <div class="card contact-card">
+  <div class="card contact-card" data-aos="fade-up">
     <h2>Send Me a Message</h2>
     <form class="contact-form" action="https://formspree.io/f/movwkvpn" method="POST">
       <label for="name">Name</label>
